@@ -1,0 +1,118 @@
+:root{
+  --bgColor : rgb(255, 255, 255);
+  --bgColorLight : rgb(219, 163, 163);
+  --textColor : rgb(0, 0, 0);
+  --textColorDark : hsla(242, 36%, 0%, 1);
+  --paperColor: rgba(0, 0, 0, 0);
+  --paperColorDark: rgba(0, 0, 0, 0);
+  --shadowColorFaint: hsla(0, 0%, 0%, 0);
+}
+
+::selected{
+  color: var(--textColorDark);
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bgColor);
+  background: linear-gradient(135deg, var(--bgColor), var(--bgColorLight));
+  color: var(--textColor);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+*{
+  box-sizing: border-box;
+  transition: all 0.12s cubic-bezier(0.42, 0.54, 0.22, 1.26);
+}
+
+#canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+audio {
+  position: fixed;
+  left: 10px;
+  bottom: -10px;
+  width: calc(100% - 20px);
+}
+
+audio.active{
+  bottom: 10px;
+}
+
+#thefile{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+}
+
+label.file{
+  justify-content: center; 
+  display: inline-block; /* Change display to inline-block */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 2px solid black;
+  
+  background: var(--paperColor);
+  color: var(--textColor);
+  font-size: 1.25em;
+  font-weight: 700;
+  box-shadow: 0 20px 60px var(--shadowColorFaint);
+
+  cursor: pointer;
+}
+
+
+label.file:hover{
+    background: var(--paperColorDark);
+    transform: translate3d(-50%, -55%, 0);
+}
+
+label.file:active{
+    background: var(--paperColorDark);
+    transform: translate3d(-50%, -45%, 0);
+}
+
+label.file.normal {
+  position: absolute;
+  top: 20px; /* Changed from top */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  font-size: 1rem;
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+}
+
+#file-info {
+  position: absolute;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999; 
+  background-color: rgba(255, 218, 218, 0.8); 
+  padding: 10px; 
+  border-radius: 5px; 
+  color: var(--textColorDark); 
+  font-size: 16px; 
+  font-family: 'Poppins', sans-serif; 
+}
+
+
