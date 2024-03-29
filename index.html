@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Audio Visualizer Three.js</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
 
-</head>
-<body>
-<div id="content">
-    <div id="file-info">Press button to select song</div>
+    <link rel="stylesheet" href="./style.css" />
 
-    <label for="thefile" class="file"> Select Audio File
-      <input type="file" id="thefile" accept=".mp3, audio/*" /> 
-    </label>
+    <title>DunG Sound Visualizer</title>
+  </head>
 
-    <audio id="audio"></audio>
-    <div id="out"></div>  
-  </div>
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
-<script src='https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
-<script src="./script.js"></script>
+  <body>
+    <div id="content">
+      <label for="thefile" class="file">
+        Select a song
+        <input type="file" id="thefile" accept=".mp3, audio/*,video/*" />
+      </label>
 
-</body>
+      <audio id="audio"></audio>
+      <div class="song-title" id="songTitle"></div>
+      <div id="customaudiocontrol" style="display: none">
+        <div id="timeleft">00:00</div>
+        <div id="controls">
+          <div id="playpause">
+            <div class="play" id="play"></div>
+            <div class="pause" id="pause"></div>
+          </div>
+          <div id="volume">
+            <label for="volume-slider" id="audiovolume">100%</label>
+            <input type="range" id="volume-slider" min="0" max="100" step="1" />
+          </div>
+        </div>
+      </div>
+      <div id="out"></div>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.3/dat.gui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js"></script>
+  <script src="./script.js"></script>
 </html>
