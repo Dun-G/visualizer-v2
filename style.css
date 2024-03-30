@@ -108,16 +108,22 @@ label.file:active {
 
 label.file.normal {
   left: 50%;
-  top: 85%;
+  top: 80%;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
   position: absolute;
   transform: translate3d(-50%, -50%, 0) scale(0.75);
+  color: transparent;
+  border: transparent;
+  background-color: transparent;
+  background: transparent;
+  opacity: 0;
+  z-index: 2;
 }
 
 label.file.normal:hover {
-  background: var(--paperColorDark);
+  background: transparent;
   transform: translate3d(-50%, -55%, 0) scale(0.75);
   animation: none;
 }
@@ -133,6 +139,7 @@ label.file.normal:hover {
 }
 
 #timeleft {
+  margin-left: 20px;
   font-size: 14px;
   margin-bottom: 10px;
   color: #b027bd;
@@ -239,9 +246,9 @@ label.file.normal:hover {
 
 .song-title {
   text-align: center;
-  display: none;
+  display: block;
   position: absolute;
-  bottom: 20px;
+  bottom: 110px;
   left: 50%;
   transform: translateX(-50%);
   padding: 5px 10px;
@@ -249,4 +256,6 @@ label.file.normal:hover {
   font-size: 14px;
   color: #b027bd;
   font-weight: bold;
+  z-index: 1;
+  pointer-events: none;
 }
